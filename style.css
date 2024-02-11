@@ -61,6 +61,10 @@ width: 100%;
     font-size: 30px;
     color: #ffffff;
 }
+.header-text p{
+    font-size: 15px;
+    color: #771232;
+}
 
 .header-text h1 {
     font-size: 60px;
