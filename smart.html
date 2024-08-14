@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Cap for Blind </title>
+    <link rel="stylesheet" href="smartstyle.css">
+    <style>
+   
+html{
+    scroll-behavior: smooth;
+}
+ body {
+            display: flex;
+            align-items: center;
+            text-align: left;
+            margin: 0 auto; 
+            max-width: 800px; 
+            background: #080808;
+            color: #ffffff;
+            flex-direction: column;
+        }
+        .image {
+            max-width: 200px;
+            height: auto;
+            margin-right: 20px; 
+            margin-bottom: 20px;
+            border-radius: 15px;
+        }
+
+        body  p{
+            max-width: 100%; 
+            margin-top: 30px;
+            text-align: left;
+            color: #ffffff;
+        
+        }
+        body p1{
+                    color: #bc0b0b;
+                 }
+
+        body h1 {
+            text-align: center; 
+            margin-bottom: 20px; 
+            margin-top: 0;
+            color: #bc0b0b;
+            
+        }
+        .contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 16px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <h1>Smart Cap for Blind</h1>
+    <p>
+        The "Smart Cap" is a groundbreaking solution designed to aid visually impaired individuals, particularly during disaster scenarios. By incorporating a combination of hardware and software components, this assistive wearable offers a cost-effective means for addressing the unique challenges faced by the visually impaired community. The system's architecture is elegantly simple, utilizing an Arduino-based setup to process visual data captured by an onboard camera. These visuals, stored as images in a .csv file format on an SD card, serve as reference points for the system's object detection and navigation capabilities.
+        In practical terms, when a visually impaired individual wears the Smart Cap and ventures outdoors, the camera captures real-time visual information of the surroundings. The Arduino system then processes this data, identifying obstacles and potential hazards in the environment. Using advanced algorithms, the system translates this visual information into auditory cues, providing the wearer with real-time voice guidance to navigate safely. This guidance includes instructions for crossing roads, detecting obstacles, and navigating through various terrains.</p>
+        <img src="images/smart.jpg" class="image">
+    </div>
+    <p>Post Your Queries Here</p>
+    <div class="contact-right">
+        <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required> 
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>         
+        </form>
+    </div>
+    <script>
+        scriptURL = 'https://script.google.com/macros/s/AKfycbyLpS4uGeghQ4sjRoHQi8HgwIum8Bm2dg6tvOW1rlULR3PPpoNCKxb_bbLubnuXqymEaQ/exec'
+       const form = document.forms['submit-to-google-sheet']
+     
+       form.addEventListener('submit', e => {
+         e.preventDefault()
+         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+           .then(response => console.log('Success!', response))
+           .catch(error => console.error('Error!', error.message))
+           form.reset();
+       })
+     </script>
+</body>
+</html>
